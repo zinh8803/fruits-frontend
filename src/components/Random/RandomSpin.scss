@@ -1,0 +1,59 @@
+.random-spin {
+  position: relative;
+  width: 100%;
+  height: 160px;
+  overflow: hidden;
+  border: 4px solid #3b82f6; // blue-500
+  border-radius: 16px;
+  background: #222;
+}
+
+.random-spin__marker {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  z-index: 20;
+  height: 100%;
+  width: 4px;
+  background: #facc15; // yellow-400
+  transform: translateX(-2px);
+}
+
+.random-spin__list {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  transition-property: transform;
+  transition-timing-function: ease;
+}
+
+.random-spin__item {
+  width: 120px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+
+.random-spin__img {
+  height: 80px;
+  object-fit: contain;
+}
+
+.random-spin__name {
+  text-align: center;
+  color: #fff;
+}
+
+.random-spin__stars {
+  color: #facc15;
+  font-size: 12px;
+}
+
+.random-spin__rarity {
+  color: #60a5fa;
+  font-size: 12px;
+}
+
