@@ -1,13 +1,20 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
 .header {
   display: flex;
   align-items: center;
-  background: linear-gradient(90deg, #18181b 80%, #222 100%);
+  background: linear-gradient(90deg, #0f1115 0%, #12141b 100%);
   padding: 0 32px;
   height: 64px;
-  border-bottom: 1px solid #222;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
   color: #fff;
   font-family: inherit;
   position: relative;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
 }
 
 .header__logo {
@@ -17,20 +24,22 @@
 }
 .header__logo-icon {
   font-size: 28px;
+  color: #60a5fa;
 }
 .header__title {
-  font-weight: bold;
+  font-weight: 700;
   font-size: 18px;
+  letter-spacing: 0.2px;
 }
 .header__switch {
   font-size: 12px;
-  color: #aaa;
+  color: #a1a1aa;
 }
 
 .header__nav {
   display: flex;
   align-items: center;
-  gap: 32px;
+  gap: 28px;
   margin-left: 32px;
   flex: 1;
 }
@@ -38,6 +47,12 @@
   font-size: 22px;
   margin-right: 8px;
   vertical-align: middle;
+  color: #9ca3af;
+  transition: color 0.15s ease, transform 0.12s ease;
+}
+.header__icon:hover {
+  color: #e5e7eb;
+  transform: translateY(-1px);
 }
 .header__badge {
   color: #a78bfa;
@@ -54,25 +69,35 @@
 .header__discord {
   font-size: 28px;
   color: #6366f1;
+  transition: color 0.15s ease, transform 0.12s ease;
+}
+.header__discord:hover {
+  color: #818cf8;
+  transform: translateY(-1px);
 }
 .header__chat {
   font-size: 22px;
 }
 .header__login-btn {
   padding: 8px 14px;
-  border-radius: 8px;
+  border-radius: 10px;
   border: 1px solid #3b82f6;
-  background: #1d4ed8;
+  background: linear-gradient(180deg, #2563eb 0%, #1d4ed8 100%);
   color: #fff;
   font-weight: 600;
   cursor: pointer;
-  transition: background 0.15s ease, transform 0.1s ease;
+  transition: background 0.15s ease, transform 0.1s ease, box-shadow 0.15s ease;
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.25);
 }
 .header__login-btn:hover {
-  background: #2563eb;
+  background: linear-gradient(180deg, #2d6cf1 0%, #2563eb 100%);
 }
 .header__login-btn:active {
   transform: translateY(1px);
+}
+.header__login-btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.35);
 }
 
 .header__user {
@@ -95,6 +120,7 @@
   color: #fff;
   font-weight: 700;
   object-fit: cover;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
 }
 
 .header__user-btn {
@@ -106,6 +132,10 @@
   color: inherit;
   cursor: pointer;
   padding: 0;
+  transition: opacity 0.15s ease;
+}
+.header__user-btn:hover {
+  opacity: 0.9;
 }
 
 .header__user-info {
@@ -129,10 +159,11 @@
   top: 52px;
   right: 0;
   width: 240px;
-  background: #0f172a;
-  border: 1px solid #1f2937;
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 12px;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.45);
   padding: 10px;
   display: flex;
   flex-direction: column;
@@ -142,7 +173,7 @@
 
 .header__menu-user {
   padding: 8px 10px;
-  border-bottom: 1px solid #1f2937;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .header__menu-name {
@@ -159,16 +190,60 @@
   padding: 10px;
   border-radius: 8px;
   border: none;
-  background: #111827;
+  background: #0b1220;
   color: #e5e7eb;
   cursor: pointer;
-  transition: background 0.15s ease;
+  transition: background 0.15s ease, transform 0.12s ease;
 }
 
 .header__menu-item:hover {
-  background: #1f2937;
+  background: #162031;
+  transform: translateY(-1px);
 }
 
 .header__menu-item--danger {
   color: #f87171;
+}
+.header__menu-item--danger:hover {
+  color: #fca5a5;
+}
+
+@media (max-width: 1024px) {
+  .header {
+    padding: 0 24px;
+    height: 60px;
+  }
+  .header__nav {
+    gap: 20px;
+    margin-left: 20px;
+  }
+  .header__right {
+    gap: 16px;
+  }
+}
+
+@media (max-width: 640px) {
+  .header {
+    padding: 0 16px;
+    height: 56px;
+  }
+  .header__title {
+    font-size: 16px;
+  }
+  .header__nav {
+    gap: 14px;
+    margin-left: 14px;
+  }
+  .header__icon {
+    font-size: 20px;
+  }
+  .header__login-btn {
+    padding: 6px 12px;
+    border-radius: 8px;
+  }
+  .header__avatar,
+  .header__avatar--placeholder {
+    width: 32px;
+    height: 32px;
+  }
 }
